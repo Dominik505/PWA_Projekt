@@ -1,0 +1,19 @@
+Projekt se sastoji od 13 php, html i javascript datoteka
+
+Pocetna stranica index.php prikazuje najvise 3 vijesti iz baze za svaku kategoriju
+U navigaciji se sa pocetne stranice moze ici na pregled zasebnih kategorija "News" i "Sport" na kojima se prikazuju sve vijesti iz iste kategorije koje nisu arhivirane
+Pritiskom na naslov odabranog clanka on se prikazuje na novoj stranici sa svim podacima koji se dohvacaju iz baze: kategorija, tko je napravio clanak (autor), 
+datum izmjene, naslov, sadrzaj, slika itd
+
+Zatim se u navigaciji moze pristupiti login formi gdje se postojeci korisnik moze prijaviti ili se novi registrirati
+
+Kod registracije se novi korisnik unosi u bazu ako je ispunio sve uvjete forme, a njegova lozinka se kriptira sa funkcijom password_hash(lozinka),
+te se kod login-a provjerava ta lozinka pomocu password_verify(unesena_lozinka, lozinka_iz_baze) gdje se usporeduju unesena lozinka i 
+lozinka u bazi od unesenog korisnickog imena
+Ako je uneseno postojece korisnicko ime korisnik nece biti registriran vec ce biti obavjesten da ime vec postoji
+
+Kada se administrator prijavi ispisuje se poruka dobrodoslice s njegovim imenom
+Ako logirani korisnik ima razinu 1, imati ce pristup administraciji gdje moze izmijeniti postojece clanke, a ako ima razinu 0 ispisuje se poruka da je prijavljen 
+ali nema pristup administraciji
+Administrator moze mjenjati sadrzaj svih clanaka ili ih izbrisati iz baze, sve promjene koje napravi bit ce vidljive na svim stranicama
+Pritiskom na log out gumb administrator se odjavljuje i vraca se na login stranicu
