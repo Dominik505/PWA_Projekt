@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projekt_pwa.css">
+    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="form_validation.js"></script>
+    <title>BBC</title>
+
+    <style type="text/css">
+        .error{
+            color:red;
+            font-size: larger;
+        }
+    </style>
+    
+
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+        <nav>
+            <ul>
+                <li><img src="Slike/bbc.png" alt=""></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="kategorija.php?id=News">News</a></li>
+                <li><a href="kategorija.php?id=Sport">Sport</a></li>
+                <li><a href="unos.html">Unos</a></li>
+                <li><a href="login.php">Log in</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <form name="vijesti" action="unos.php" method="post" onsubmit="return validate()" enctype="multipart/form-data">  
+                <label for="naslov">Unesite naslov vijesti</label>
+                <input type="text" name="naslov" id="naslov">
+                <span id="poruka_naslov" class="error"></span><br>
+                <label for="sazetak">Unesite kratki sazetak</label>
+                <span id="poruka_sazetak" class="error"></span><br>
+                <textarea name="sazetak" id="sazetak" cols="30" rows="10"></textarea><br>
+                <label for="tekst">Unesite tekst clanka</label>
+                <span id="poruka_tekst" class="error"></span><br>
+                <textarea name="tekst" id="tekst" cols="30" rows="10"></textarea><br>
+                <label for="kategorija">Odaberite kategoriju</label>
+                <select name="kategorija" id="kategorija">
+                    <option value="" disabled selected>Odaberite kategoriju</option>
+                    <option value="Sport">Sport</option>
+                    <option value="News">News</option>
+                </select>
+                <span id="poruka_kategorija" class="error"></span><br>
+                <label for="slika">Odaberite sliku</label>
+                <input type="file" name="slika" id="slika">
+                <span id="poruka_slika" class="error"></span><br>
+                <label for="arhiva">Zelite li arhivirati vijest</label>
+                <input type="checkbox" name="arhiva" id="arhiva"><br>
+                <input type="submit" name="submit" id="submit" value="Posalji">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <br><br><hr><br>
+            <div>
+                <p>Copyright © 2022 BBC, The BBC is not responsible for the content of external sites. Read about our approach to external linking.</p>
+            </div>
+        </div>
+    </footer>
+        
+
+</body>
+
+
+
+
+</html>
